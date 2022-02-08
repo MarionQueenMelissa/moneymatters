@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:money_matters_v3/src/screens/homescreen.dart';
+import 'package:money_matters_v3/src/screens/verify.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -14,12 +15,21 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text(
+          'Login',
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 30.0,
+          ),
+        ),
         backgroundColor: Colors.amber,
         shadowColor: Colors.amber,
       ),
       body: Column(
         children: [
+          // SizedBox(
+          //  height: 40,
+          // ),
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: TextField(
@@ -35,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -52,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -89,8 +99,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       .createUserWithEmailAndPassword(
                           email: _email, password: _password)
                       .then((_) {
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => VerifyScreen()));
                   });
                 },
                 child: Text('SignUp'),
@@ -98,14 +108,26 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
           SizedBox(
-            height: 180,
+            height: 20,
           ),
           Text(
             'MoneyMatters',
             style: TextStyle(
-              fontSize: 20.0,
+              fontSize: 30.0,
               color: Colors.amber,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.asset(
+              'assets/images/MoneyMattersLogo.png',
+              height: 130,
+              width: 200,
+              fit: BoxFit.cover,
             ),
           ),
         ],

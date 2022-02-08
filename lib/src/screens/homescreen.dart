@@ -7,6 +7,7 @@ import 'package:money_matters_v3/models/transaction_model.dart';
 import 'package:money_matters_v3/src/screens/addtransaction.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:money_matters_v3/src/screens/flutterwave.dart';
+import 'package:money_matters_v3/src/screens/logout.dart';
 import 'package:money_matters_v3/src/screens/widgets/confirm_dialog.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -163,7 +164,45 @@ class _HomeScreenState extends State<HomeScreen> {
             if (snapshot.hasData) {
               if (snapshot.data!.isEmpty) {
                 return Center(
-                  child: Text('No values Found'),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child:
+                            Image.asset('assets/images/MoneyMattersLogo.png'),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          'Hello,Welcome to MoneyMatters.',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.amber,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          'To add transactions,click on the add button',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.amber,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                    ],
+                  ),
                 );
               }
               getTotalBalance(snapshot.data!);
@@ -185,10 +224,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.black12,
                               ),
                               padding: EdgeInsets.all(12.0),
-                              child: Icon(
-                                Icons.emoji_emotions,
-                                size: 32.0,
-                                color: Colors.amber,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => LogoutScreen()));
+                                },
+                                child: Icon(
+                                  Icons.emoji_emotions,
+                                  size: 32.0,
+                                  color: Colors.amber,
+                                ),
                               ),
                             ),
                             SizedBox(

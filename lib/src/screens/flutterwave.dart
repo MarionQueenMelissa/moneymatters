@@ -116,12 +116,12 @@ class _flutestState extends State<flutest> {
     try {
       Flutterwave flutterwave = Flutterwave.forUIPayment(
           context: this.context,
-          encryptionKey: "FLWSECK_TESTdd159b9708d3",
-          publicKey: "FLWPUBK_TEST-dd76292e8c6aa08ad4600b3bf52e3d59-X",
+          encryptionKey: 'FLWSECK_TESTdd159b9708d3',
+          publicKey: 'FLWPUBK_TEST-dd76292e8c6aa08ad4600b3bf52e3d59-X',
           currency: 'UGX',
           amount: amount,
           email: email,
-          fullName: "Omony Polycarp",
+          fullName: 'Omony Polycarp',
           txRef: _ref!,
           isDebugMode: true,
           phoneNumber: "0123456789",
