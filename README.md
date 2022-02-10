@@ -7,7 +7,8 @@ A new Flutter project.
 
 
 This project is an expense/ income tracking app
-
+You can find out more on our website 
+https://marionqueenmelissa.github.io/
 
 
 <p float="left">
