@@ -1,6 +1,7 @@
 # money_matters_v3
 
-A new Flutter project.
+Flutter project by Marion Queen Melissa, Okanya Emmanuel, Omony Polycarp and Gimei Alex
+
 
 ## Overview
 
